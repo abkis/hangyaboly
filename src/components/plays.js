@@ -1,97 +1,87 @@
 //info about each play here
 import React, {Component} from 'react';
 import {Tabs, Tab, Grid, Cell, Card, CardText, CardTitle, CardActions, Button, CardMenu, IconButton} from "react-mdl";
+import Firebase from 'firebase';
+import './css/plays.css';
+
+const db = Firebase.firestore();
+const storage = Firebase.storage();
 
 class Plays extends Component {
     constructor(props){
         super(props);
-        this.state = {activeTab: 0};
+        this.state = {activeTab: 0, loading: true, plays: [], data: [], docName: []};
     }
 
-    toggleCategories() {
-        if (this.state.activeTab === 0){
-            return(
-                <div className="projects-grid">
-                {/*Project 1 */}
-                <Card shadow={5} style={{minWidth: '450', margin: 'auto'}}>
-                    <CardTitle style={{color: 'black', height: '170px', background: 'url(https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png) center / cover'}}>
-                    React Project 1
-                    </CardTitle>
-                    <CardText>Dummy Text</CardText>
-                    <CardActions border>
-                        <Button colored>Github</Button>
-                        <Button colored>CodePen</Button>
-                        <Button colored>LiveDemo</Button>
-                    </CardActions>
-                    <CardMenu style={{color: '#fff'}}>
-                        <IconButton name="share"/>
-                    </CardMenu>
-                </Card>
-
-                {/*Project 2 */}
-                <Card shadow={5} style={{minWidth: '450', margin: 'auto'}}>
-                    <CardTitle style={{color: 'black', height: '170px', background: 'url(https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png) center / cover'}}>
-                    React Project 2
-                    </CardTitle>
-                    <CardText>Dummy Text</CardText>
-                    <CardActions border>
-                        <Button colored>Github</Button>
-                        <Button colored>CodePen</Button>
-                        <Button colored>LiveDemo</Button>
-                    </CardActions>
-                    <CardMenu style={{color: '#fff'}}>
-                        <IconButton name="share"/>
-                    </CardMenu>
-                </Card>
-
-                {/*Project 3 */}
-                <Card shadow={5} style={{minWidth: '450', margin: 'auto'}}>
-                    <CardTitle style={{color: 'black', height: '170px', background: 'url(https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png) center / cover'}}>
-                    React Project 3
-                    </CardTitle>
-                    <CardText>Dummy Text</CardText>
-                    <CardActions border>
-                        <Button colored>Github</Button>
-                        <Button colored>CodePen</Button>
-                        <Button colored>LiveDemo</Button>
-                    </CardActions>
-                    <CardMenu style={{color: '#fff'}}>
-                        <IconButton name="share"/>
-                    </CardMenu>
-                </Card>
-                </div>
-            )
-        }else if (this.state.activeTab === 1){
-            return(
-                <div><h1>Angular</h1></div>
-            )
-        }else if (this.state.activeTab === 2){
-            return(
-                <div><h1>Vue.js</h1></div>
-            )
-        }else if (this.state.activeTab === 3){
-            return(
-                <div><h1>MongoDB</h1></div>
-            )
+    async getInfo(){
+        var doc = await (await db.collection("about").doc("plays").get()).data();
+        this.setState({data: doc});
+        console.log(doc);
+        for (var play in doc){
+            this.state.plays.push(doc[play].title + ' – ' + doc[play].author);
+            this.state.docName.push(play);
         }
+        return false;
+    }
+
+    async componentDidMount(){
+        var dummy = await this.getInfo();
+        this.setState({loading: dummy});
+        this.changeImg();
+    }
+
+    setTabs(){
+        //makes number of tabs depending on no. plays
+        const {plays, data} = this.state;
+        const items = [];
+        plays.forEach((play) =>{
+            items.push(<Tab className="tab">{play}</Tab>)
+        });
+        return items;
+    }
+
+    changeImg(){
+        const {data, docName, activeTab} = this.state;
+        var imgRef = storage.ref(`plays/${data[docName[activeTab]].img}`);
+        imgRef.getDownloadURL().then(function(url){
+            console.log("got img");
+            //return(url)
+            var img = document.getElementById("poster");
+            img.src = `${url}`;
+        }).catch(function(err){
+            console.log("there was an issue: ", err);
+        });
+    }
+
+    pageLayout(){
+        const {activeTab, plays, data, loading, docName} = this.state;
+        return(
+            <div className="play-body">
+                <h1>{loading? "Egy pillanat..." : plays[activeTab]}</h1>
+                <hr/>
+                <div className="info">
+                    <Grid className="play-grid">
+                        <Cell col={6} className="lhs">
+                            <img id="poster" src={loading? "" : this.changeImg()}/>
+                        </Cell>
+                        <Cell col={6} className="rhs">
+                            <div>{loading? "Egy pillanat..." : data[docName[activeTab]].about}</div>
+                        </Cell>
+                    </Grid>
+                </div>
+            </div>
+        )
     }
 
     render(){
+        var item = [];
+        item.push(this.setTabs());
         return(
             <div>
-                <Tabs activeTab={this.state.activeTab} onChange={(tabID)=> this.setState({activeTab: tabID})} ripple>
-                    {/*each tab rep by a # starting from 0*/}
-                    <Tab>React</Tab>
-                    <Tab>Angular</Tab>
-                    <Tab>Vue.js</Tab>
-                    <Tab>MongoDB</Tab>
+                <Tabs id="tabs" activeTab={this.state.activeTab} onChange={(tabID)=> this.setState({activeTab: tabID})} ripple>
+                    {item}
                 </Tabs>
-                    <Grid>
-                        <Cell col={12}>
-                            <div className="content">{this.toggleCategories()};</div>
-                        </Cell>
-                    </Grid>
-                    
+                <div className="content">{this.pageLayout()}</div>
             </div>
         )
     }

@@ -1,0 +1,47 @@
+#tabs{
+    font-family: "Allegrya";
+    font-size: 30px;
+}
+
+.tab:hover{
+    background-color: rgba(128, 128, 128, 0.199);
+}
+
+.play-body {
+    text-align: center;
+}
+
+.play-body h1{
+    font-family: "Anton";
+    margin-bottom: 2px;
+}
+
+.play-body hr{
+    border-top: 5px dotted black;
+    width: 50%;
+    margin: auto;
+    margin-top: 0;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+#poster{
+    height: 600px;
+}
+
+.lhs{
+    padding: 0;
+    margin: 0;
+}
+
+.rhs{
+    font-family: "Alegrya";
+    font-size: 30px;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+}
+
+.play-grid{
+    width: 80%;
+}

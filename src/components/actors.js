@@ -6,12 +6,6 @@ import './css/actors.css';
 const db = Firebase.firestore();
 const storage = Firebase.storage();
 
-//map of info name on firebase : desired title
-const info = [{
-    'about' : 'Rólam',
-
-}]
-
 class Actors extends Component{
     constructor(props){
         super(props);
