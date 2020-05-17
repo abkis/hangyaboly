@@ -6,6 +6,12 @@ import './css/actors.css';
 const db = Firebase.firestore();
 const storage = Firebase.storage();
 
+//map of info name on firebase : desired title
+const info = [{
+    'about' : 'Rólam',
+
+}]
+
 class Actors extends Component{
     constructor(props){
         super(props);
@@ -39,13 +45,13 @@ class Actors extends Component{
         this.getInfo();
     }
 
-    infoTemplate(i){
+    infoTemplate(i, m){
         const {actor} = this.state;
         return(
             <div>
                 <Grid>
                 <Cell col={4}>
-                    <a className="category">{i}</a>
+                    <a className="category">{m}</a>
                 </Cell>
                 <Cell col={8}>
                     <a className="info">{actor[i]}</a>
@@ -55,13 +61,51 @@ class Actors extends Component{
         )
     }
 
+        charTemplate(m){
+            const {actor} = this.state;
+            return(
+                <div>
+                    <Grid>
+                    <Cell col={4}>
+                        <a className="category">{this.capital(m)}</a>
+                    </Cell>
+                    <Cell col={8}>
+                        <a className="info">{this.formatChar(actor["characters"][m])}</a>
+                    </Cell>
+                    </Grid>
+                </div>
+            )
+    }
+
+    capital(str){
+        var newStr = '';
+        newStr = str.charAt(0).toUpperCase() + str.slice(1);
+        return newStr;
+    }
+
+    formatChar(list){
+        var str = '';
+        var len = list.length;
+        list.forEach((ea, i) =>{
+            if (i === len - 1){
+                str += ea;
+            }
+            else{
+                str += ea + ', ';
+            }
+        })
+        console.log(str);
+        return str;
+    }
+
     callEach(){
         const items = [];
-        for (var m in this.state.actor){
-            if (m == "characters"){
-                continue;
-            }
-            items.push(this.infoTemplate(m));
+        items.push(this.infoTemplate('about', 'Rólam'));
+        items.push(<hr/>);
+        items.push(<h3>Szerepek</h3>);
+        const char = this.state.actor.characters;
+        for (var play in char){
+            items.push(this.charTemplate(play));
         }
         return items;
     }
@@ -74,10 +118,10 @@ class Actors extends Component{
                 {loading ? name : actor.lastName + " " + actor.firstName}
                 </h1>
             <Grid className="actor-grid">
-                <Cell col={6}>
+                <Cell col={6} className="lhs">
                     <img id = "profile" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxISEhUSEhIVFRUVFRUXFxUVFRUVFRUVFRUWFxUVFRUYHSggGBolHRUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDQ0NDw0NDisZFRkrKystLTctLS0tLS0rLSstNystNzcrKy0rLTctLS0tNy0tLSsrLS0rLTctLS03Ky0rK//AABEIAOEA4QMBIgACEQEDEQH/xAAYAAEBAQEBAAAAAAAAAAAAAAAAAQIDB//EAB0QAQEBAAICAwAAAAAAAAAAAAABERKRQYECIWH/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/APH9TU0AKgC6WgBoaAaaixQNNQF1UgCiQoKalNBpEiyAsIRaByLUi0F5DKwFlXUNBdGMUGBF1ATTQFEgARUAVFUQoALAABQGYqaCqALIQAUqALCCQFVIUAQBlCiCLhAAWoC6gAGmgAi6oKACoAUhABYQAxSFAqooAagLFxmKBgAOYEQRcKoCAABgBQANCqKUAUgQEABYGICrGcWAqs61ASKmAKrMUBTiA54iiCAACoBCKkAAwBagooiwAEgKCghVSgspAgKuJhoNIrINCSiDWjOqDnUgUCrKyQFIIC0KQALABUwBQFCioCKYAIoAoAsEi2gqasSgKiwGuhkBjUoIBQ0DEXQEioQCVYiwC1UMUU0IgUIVRKACriLQRYEgLiCgFNAI1GZGqACg4lKiABABUAAAAAiwFF1ABSgAgUCLEaA1Yw1KCrqQ0AIoItolBelTiIOS0KAilAQMBUAACUCrqEUWFE0GiIAqEKCiLAFokBqVNRZQWKkAKUkIBoaA5mlMQAhgAAAJAWIChFgYChqAoAKhQBcTVBFABWVBopAAiRoEDBBzoqAioUBQBBaQECkUUNANVFARYgLBIqAqVVA1AFCkAq0AIqQtBrf0TAGEBBKLUAAAWRCAWkKmKNCFBYABQQBqMrKCrKzVoBAAqxJFAUKAGgLoaA5FBBRIUAAAKKJGmVBbEVICgAWmhgGGJFoKJAFgAKCAsLAgKqANehPsByMDUClADRFBAVRFTSgsEIDQIAomAoigYolAWJKSgoigosAFhADAUHFIoBEUQKeFAZICgUAVFAFoAJABasQAWADNPiANNQEFiTyCjTQAAA//2Q=="/>
                 </Cell>
-                <Cell col={6}>
+                <Cell col={6} className="rhs">
                     {loading ? "Egy pillanat..." : this.callEach()}
                 </Cell>
             </Grid>
@@ -88,9 +132,9 @@ class Actors extends Component{
     render(){
         return(
             <div className="actor-page">
-                <h1>
+                <div>
                     {this.makePage()}
-                </h1>
+                </div>
             </div>
         )
     }

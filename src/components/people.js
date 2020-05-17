@@ -59,8 +59,37 @@ class Projects extends Component {
         });
     }
 
+    cardTemplate(i){
+        const {loading, data} = this.state;
+        return(
+            <Link className="link" to={loading? "/tagok" : `/tagok/${data[i].url}`}>
+                <Card className = "card" id={`card${i}`} shadow={5}>
+                    <a className="about">
+                    {loading? "Egy pillanat..." : data[i].lastName + " " + data[i].firstName}
+                    </a>
+                </Card>
+                </Link>
+        )
+    }
+
     toggleCategories(i) {
         const {loading, data} = this.state;
+        var indices = [];
+        for (var j = i; j <= (i + 2); ++j){
+            console.log(j);
+            if (j == data.length) break;
+            indices.push(j);
+        }
+        var toRender = [];
+        indices.forEach((ea) =>{
+            toRender.push(this.cardTemplate(ea));
+        })
+        return(
+            <div className="projects-grid">
+                {toRender}
+            </div>
+        )
+        /*
         console.log("i: ", i, "data.length: ", data.length);
             return(    
                 <div className="projects-grid">
@@ -89,20 +118,23 @@ class Projects extends Component {
                 </Link>
 
                 </div> 
-            )
+            )*/
     }
 
     render(){
         //this.test();
+        var len = this.state.data.length;
+        var item = [];
+        for (var i = 0; i < len; i += 3){
+            item.push(<div className="content">{this.toggleCategories(i)};</div>);
+        }
         return(
             <div className="people">
                 <h1>Tagok</h1>
                 <hr />
                    <Grid>
                        <Cell col={12}>
-                           <div className="content">{this.toggleCategories(0)};</div>
-                           <div className="content">{this.toggleCategories(3)};</div>
-                           <div className="content">{this.toggleCategories(9)};</div>
+                           {item}
                       </Cell>
                    </Grid>      
             </div>
