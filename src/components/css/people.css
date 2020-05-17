@@ -1,0 +1,75 @@
+.people h1{
+  text-align: center;
+  font-family: 'Anton';
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.people hr{
+  border-top: 5px dotted black;
+  width: 50%;
+  margin: auto;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.projects-grid{
+    display: flex;
+  }
+
+  .card {
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    margin-bottom: 40px;
+    transition: all .2s ease-in-out;
+  }
+
+  .card:hover{
+    transform: scale(1.1);
+  }
+
+  /*
+  .card a{
+      color: white;
+      font-family: Allan;
+      margin-top: 250px;
+      font-size: 35px;
+      height: 50px;
+      padding-top: 20px;
+      padding-left: 8px;
+      background-color: black;
+  }*/
+
+  .link{
+    color: white;
+    margin: auto;
+  }
+
+  .link:hover{
+    color: white;
+  }
+
+  .about{
+    color: white;
+    font-family: Allan;
+    margin-top: 250px;
+    border: none;
+    text-align: left;
+    font-size: 35px;
+    height: 50px;
+    padding-top: 13px;
+    background-color: black;
+    padding-left: 5px;
+  }
+
+  .about:hover{
+    color: white;
+  }
+/*
+  .about:hover{
+    background: #a80077; 
+    background: -webkit-linear-gradient(to right, #66ff00, #a80077);  
+    background: linear-gradient(to right, #66ff00, #a80077); 
+    color: black;
+  }*/

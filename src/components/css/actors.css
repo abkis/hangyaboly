@@ -1,0 +1,20 @@
+.actor-page h1{
+    text-align: center;
+    font-family: 'Anton';
+    padding: 0;
+    margin-bottom: 0;
+  }
+  
+  .actor-page hr{
+    border-top: 5px dotted black;
+    width: 50%;
+    margin: auto;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  #profile{
+    height: 500px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px black;
+  }

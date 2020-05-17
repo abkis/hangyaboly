@@ -1,0 +1,39 @@
+/*contact page css */
+.contact-body{
+    margin: auto;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    padding-top: 2em;
+  }
+  
+  .contact-grid{
+    text-align: center;
+    justify-content: center;
+    width: 90%;
+    height: 550px;
+    background: white;
+    color: black;
+    margin-bottom: 20px;
+  }
+  
+  .contact-grid h2{
+    font-family: 'Anton';
+  }
+  
+  .contact-grid p{
+    font-family: 'Alegreya';
+    font-weight: bold;
+  }
+  
+  .contact-grid hr{
+    border-top: 5px dotted black;
+    width: 50%;
+    margin: auto;
+  }
+  
+  .contact-list i{
+    font-size: 66px;
+    padding-right: 5rem;
+  }

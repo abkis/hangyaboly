@@ -1,0 +1,70 @@
+.about-header h1{
+    text-align: center;
+    font-family: 'Anton';
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.about-header hr{
+    border-top: 5px dotted black;
+    width: 50%;
+    margin: auto;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.about-grid{
+    text-align: center;
+    justify-content: center;
+    width: 90%;
+    height: 550px;
+    background: white;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.about-grid h3{
+    font-family: 'Anton';
+    padding: 0;
+    font-style: oblique;
+}
+
+.about-grid p{
+    font-family: 'Allegrya';
+    font-size: 15px;
+}
+
+.about-page hr{
+    border-top: 5px dotted black;
+    width: 50%;
+    margin: auto;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.sponsors h3{
+    font-family: 'Anton';
+    padding: 0;
+    font-style: oblique;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.sponsors p{
+    margin: 0;
+    font-family: "Allegyra";
+    font-size: 15px;
+    text-align: left;
+}
+
+.sponsors i{
+    font-size: 50px;
+}
+
+.sponsors i:hover{
+    color: rgb(77, 34, 34);
+}
+
+.sponsor-grid{
+    width: 50%;
+}
