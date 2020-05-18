@@ -1,6 +1,6 @@
 //info about each play here
 import React, {Component} from 'react';
-import {Tabs, Tab, Grid, Cell, Card, CardText, CardTitle, CardActions, Button, CardMenu, IconButton} from "react-mdl";
+import {Tabs, Tab, Grid, Cell, List, ListItemContent, ListItem} from "react-mdl";
 import Firebase from 'firebase';
 import './css/plays.css';
 
@@ -53,6 +53,55 @@ class Plays extends Component {
         });
     }
 
+    listActor(){
+        const {data, docName, activeTab} = this.state;
+        var items = [];
+        var current = data[docName[activeTab]].roles;
+        for (var actor in current){
+            items.push(
+                <ListItem>
+                    <ListItemContent style={{fontFamily: 'Anton', fontSize: "20px"}}>
+                        {actor}
+                    </ListItemContent>
+                </ListItem>
+            )
+        }
+        return items;
+    }
+
+    listRoles(){
+        const {data, docName, activeTab} = this.state;
+        var items = [];
+        var current = data[docName[activeTab]].roles;
+        for (var actor in current){
+            items.push(
+                <ListItem>
+                    <ListItemContent style={{fontFamily: "Allegrya", fontSize: '20px'}}>
+                        {current[actor]}
+                    </ListItemContent>
+                </ListItem>
+            )
+        }
+        return items;
+    }
+
+    listContent(){
+        const {data, docName, activeTab} = this.state;
+        var items = [];
+        var current = data[docName[activeTab]].roles;
+        for (var actor in current){
+            items.push(
+                <ListItem>
+                    <ListItemContent>
+                        <a style={{fontFamily: 'Anton', fontSize:"20px"}}>{actor} </a>
+                        <a style={{fontFamily: "Allegrya", fontSize:"20px", textAlign: 'center', paddingInlineStart: '15px'}}>{current[actor]}</a>
+                    </ListItemContent>
+                </ListItem>
+            )
+        }
+        return items;
+    }
+
     pageLayout(){
         const {activeTab, plays, data, loading, docName} = this.state;
         return(
@@ -68,6 +117,15 @@ class Plays extends Component {
                             <div>{loading? "Egy pillanat..." : data[docName[activeTab]].about}</div>
                         </Cell>
                     </Grid>
+                    <hr/>
+                    <h3>Szereplők</h3>
+                    <Grid className="actor-list">
+                        <Cell col={8} className="list-lhs" style={{margin: 'auto'}}>
+                            <List className="list-actor">
+                                {loading? "..." : this.listContent()}    
+                            </List>                    
+                        </Cell>
+                    </Grid> 
                 </div>
             </div>
         )

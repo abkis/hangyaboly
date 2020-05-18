@@ -13,13 +13,13 @@ class About extends Component {
                 </div>
                 <div className="about-body">
                     <Grid className="about-grid">
-                        <Cell col={6}>
+                        <Cell col={6} style={{boxShadow: '0 0 10px rgb(6, 114, 6)', borderRadius: '5px', backgroundColor: 'rgba(128, 128, 128, 0.171)'}}>
                             <h3>A Színházról</h3>
                             <p>
-                                IDE KELL VMI A SZINHAZROL, MIERT, CEL, STB...
+                            Oyan szinházat szeretnénk létrehozni, ahol nemcsak a nézők, de a szinészek is tanulhatnak valami újat, miközben játszanak, szórakoznak. Elsősorban tanitani szeretnénk, és csak másodsorban szórakoztatani. Éppen ezért olyan szindarabok lesznek / voltak megálmodva szinpadra, amin nemcsak nevetni, sirni es gondokodni lehet, de valami újat is tanulni.
                             </p>
                         </Cell>
-                        <Cell col={6}>
+                        <Cell col={6} style={{boxShadow: '0 0 10px rgb(6, 114, 6)', borderRadius: '5px', backgroundColor: 'rgba(128, 128, 128, 0.171)'}}>
                             <h3>A Tagokról</h3>
                             <p>valami arrol, hogy egyszeru emberek, miert szeretik, stb, gyors osszefoglalo</p>
                         </Cell>

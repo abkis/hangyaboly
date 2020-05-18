@@ -31,7 +31,9 @@
 
 .about-grid p{
     font-family: 'Allegrya';
-    font-size: 15px;
+    font-size: 18px;
+    margin-left: 5px;
+    text-align: left;
 }
 
 .about-page hr{

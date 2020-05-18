@@ -96,10 +96,15 @@ class Actors extends Component{
         const items = [];
         items.push(this.infoTemplate('about', 'Rólam'));
         items.push(<hr/>);
+        if (this.state.actor.role != undefined){
+        items.push(<div className="role">{this.state.actor.role}</div>);
+        }
+        if (this.state.actor.characters != undefined){
         items.push(<h3>Szerepek</h3>);
         const char = this.state.actor.characters;
         for (var play in char){
             items.push(this.charTemplate(play));
+        }
         }
         return items;
     }

@@ -36,12 +36,26 @@
 
 .rhs{
     font-family: "Alegrya";
-    font-size: 30px;
+    font-size: 20px;
     text-align: left;
     padding: 0;
     margin: 0;
 }
 
+.play-body h3{
+    font-family: 'Anton';
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
 .play-grid{
     width: 80%;
+}
+
+.actor-list{
+    width: 80%;
+}
+
+.list-lhs{
 }
