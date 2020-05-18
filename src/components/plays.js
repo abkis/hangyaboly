@@ -32,7 +32,7 @@ class Plays extends Component {
 
     setTabs(){
         //makes number of tabs depending on no. plays
-        const {plays, data} = this.state;
+        const {plays} = this.state;
         const items = [];
         plays.forEach((play) =>{
             items.push(<Tab className="tab">{play}</Tab>)

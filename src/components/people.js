@@ -7,8 +7,6 @@ import Firebase from '../firebase';
 const db = Firebase.firestore();
 const storage = Firebase.storage();
 
-const plays = ['hangyaboly', 'gyertyak', 'totek'];
-
 class Projects extends Component {
     constructor(props){
         super(props);
@@ -73,11 +71,11 @@ class Projects extends Component {
     }
 
     toggleCategories(i) {
-        const {loading, data} = this.state;
+        const {data} = this.state;
         var indices = [];
         for (var j = i; j <= (i + 2); ++j){
             console.log(j);
-            if (j == data.length) break;
+            if (j === data.length) break;
             indices.push(j);
         }
         var toRender = [];

@@ -47,7 +47,7 @@ class Contact extends Component {
                             <ListItem>
                                 <ListItemContent style={{fontSize: '26px', fontFamily: 'Anton', marginLeft: '13px'}}>
                                     <a href="https://www.google.com/maps/place/Hungarian+Canadian+Cultural+Centre/@43.7169428,-79.3145311,17z/data=!3m1!4b1!4m5!3m4!1s0x89d4cdb7dee9d18b:0xfeb24f21676bd304!8m2!3d43.7169428!4d-79.3123424" rel="noopener noreferrer" target="_blank">
-                                    <i style={{color: 'black', marginRight: '8px'}} class="fa fa-map-marker" aria-hidden="true"/>
+                                    <i style={{color: 'black', marginRight: '8px'}} className="fa fa-map-marker" aria-hidden="true"/>
                                     </a>
                                     141 Sunrise Ave, North York, ON M4A 1A9
                                 </ListItemContent>
