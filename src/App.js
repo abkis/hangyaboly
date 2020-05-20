@@ -11,7 +11,7 @@ class App extends Component {
     return (
       <div>
       <Layout fixedHeader>
-          <Header className="header-color" title={<Link style={{fontFamily: 'Allan', fontSize: '40px', textDecoration: 'none', color: 'white'}} to="/">Hangyaboly Színház</Link>} >
+          <Header className="header-color" title={<Link style={{fontFamily: 'Allan', fontSize: '40px', textDecoration: 'none', color: 'white'}} to="/">Hangyaboly Színjátszó Társulat</Link>} >
               <Navigation>
                 <Link to="/" style={{fontFamily: 'Allan', fontSize: '30px'}}>Főoldal</Link>
                 <Link to="/rolunk" style={{fontFamily: 'Allan', fontSize: '30px'}}>Rólunk</Link>

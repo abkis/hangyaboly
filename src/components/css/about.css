@@ -17,7 +17,7 @@
     text-align: center;
     justify-content: center;
     width: 90%;
-    height: 550px;
+    height: auto;
     background: white;
     color: black;
     margin-bottom: 20px;
@@ -29,11 +29,36 @@
     font-style: oblique;
 }
 
-.about-grid p{
+.testimonials{
+    font-family: "Alegrya";
+    font-style: italic;
+    margin-left: 5px;
+    text-align: left;
+    font-size: 15px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.pretty{
+    font-family: 'Bilbo Swash Caps', cursive;
+    font-weight: 700;
+    margin-left: 15%;
+    font-size: 18px;
+}
+
+.description {
     font-family: 'Allegrya';
     font-size: 18px;
     margin-left: 5px;
     text-align: left;
+}
+
+.about-grid h4{
+    font-family: 'Bilbo Swash Caps', cursive;
+    font-weight: 700;
+    padding: 0;
+    margin-top: 0;
+    text-decoration-line: underline;
 }
 
 .about-page hr{
@@ -55,7 +80,7 @@
 .sponsors p{
     margin: 0;
     font-family: "Allegyra";
-    font-size: 15px;
+    font-size: 20px;
     text-align: left;
 }
 
@@ -69,4 +94,5 @@
 
 .sponsor-grid{
     width: 50%;
+    margin-bottom: 0;
 }

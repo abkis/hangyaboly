@@ -14,7 +14,7 @@ class Contact extends Component {
                             alt="group-pic-contact"
                             style={{height: '250px'}}
                         />
-                        <p style={{width: '75%', margin:'auto', paddingTop: '1em'}}>blah blah blah csatlakozzon blah blah blah</p>
+                        <p style={{width: '75%', margin:'auto', fontSize: '15px', paddingTop: '1em'}}>Ha van bármi kérdése, írjon nekünk! Szívesen fogadjuk az érdeklödőket.</p>
                     </Cell>
 
                     <Cell col={6}>
