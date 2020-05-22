@@ -3,10 +3,11 @@
   font-family: 'Anton';
   padding: 0;
   margin-bottom: 0;
+  font-size: 3.5vw;
 }
 
 .people hr{
-  border-top: 5px dotted black;
+  border-top: 0.4vw dotted black; /*5px*/
   width: 50%;
   margin: auto;
   padding-bottom: 0;
@@ -18,8 +19,8 @@
   }
 
   .card {
-    width: 300px;
-    height: 300px;
+    /*width: 300px; /*300px*/
+    /*height: 300px; /*300px*/
     margin: auto;
     margin-bottom: 40px;
     transition: all .2s ease-in-out;
@@ -53,14 +54,15 @@
   .about{
     color: white;
     font-family: Allan;
-    margin-top: 250px;
+    margin-top: 16.5vw; /*250px*/
     border: none;
     text-align: left;
-    font-size: 35px;
-    height: 50px;
-    padding-top: 13px;
+    font-size: 2.2vw; /*35px*/
+    height: 3vw; /*50px*/
+    padding-bottom: 0.5vw;
+    padding-top: 1vw; /*13px*/
     background-color: black;
-    padding-left: 5px;
+    padding-left: 0.5vw; /*5px*/
   }
 
   .about:hover{

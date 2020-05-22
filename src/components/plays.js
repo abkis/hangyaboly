@@ -35,7 +35,7 @@ class Plays extends Component {
         const {plays} = this.state;
         const items = [];
         plays.forEach((play) =>{
-            items.push(<Tab className="tab">{play}</Tab>)
+            items.push(<Tab className="tab" style={{fontSize: '1vw'}}>{play}</Tab>)
         });
         return items;
     }
@@ -48,6 +48,7 @@ class Plays extends Component {
             //return(url)
             var img = document.getElementById("poster");
             img.src = `${url}`;
+            
         }).catch(function(err){
             console.log("there was an issue: ", err);
         });

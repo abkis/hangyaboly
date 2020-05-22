@@ -3,6 +3,7 @@
     font-family: 'Anton';
     padding: 0;
     margin-bottom: 0;
+    font-size: 3.5vw;
   }
   
   .actor-page hr{
@@ -14,31 +15,31 @@
   }
 
   #profile{
-    height: 500px;
+    height: 30vw; /*500px*/
     border-radius: 20px;
     box-shadow: 0 0 10px black;
   }
 
   .actor-grid{
-    width: 80%;
+    width: 80%; /*80%*/
     background-color: rgba(183, 212, 175, 0.678);
     border-radius: 20px;
   }
 
   .category{
-    font-size: 30px;
+    font-size: 2vw; /*30px*/
     font-family: "Alegry";
     font-style: oblique;
   }
 
   .info{
-    font-size: 20px;
+    font-size: 1.3vw; /*20px*/
     font-family: 'Alegrya';
     margin-top: 0;
   }
 
   .rhs hr{
-    border-top: 3px dotted black;
+    border-top: 0.2vw dotted black; /*3px*/
     width: 100%;
     margin: auto;
   }
@@ -49,10 +50,11 @@
     padding: 0;
     margin-top: 3px;
     margin-bottom: 0;
+    font-size: 2vw;
   }
 
   .role{
     margin-top: 10px;
-    font-size: 30px;
+    font-size: 2vw; /*30px*/
     text-align: center;
   }

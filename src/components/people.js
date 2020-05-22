@@ -10,8 +10,20 @@ const storage = Firebase.storage();
 class Projects extends Component {
     constructor(props){
         super(props);
-        this.state = {loading: true, data: []};
+        this.state = {loading: true, width: window.innerWidth, data: []};
     }
+      
+  componentWillMount() {
+    window.addEventListener('resize', this.handleWindowSizeChange);
+  }
+  
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleWindowSizeChange);
+  }
+  
+  handleWindowSizeChange = () => {
+    this.setState({ width: window.innerWidth });
+  };
 
     //to get user data
     async getActors() {
@@ -28,22 +40,6 @@ class Projects extends Component {
     componentDidMount(){
         this.getActors();
     }
-/*
-    filterActors(){
-        //only select actors actually in the play
-        const {activeTab, data, activeActors} = this.state;
-        console.log("Active Actors Func");
-        console.log(data);
-        console.log(activeActors);
-        var onPlay = plays[activeTab];
-        data.forEach((ea, i) =>{
-            if (ea[onPlay]){
-                activeActors.push(ea);
-                this.getURL(ea['img'], i);
-            }
-        });
-        console.log('active: ', activeActors);
-    } */
 
     getURL(name, i){
         var imgRef = storage.ref(`actor-pics/${name}`);
@@ -51,18 +47,18 @@ class Projects extends Component {
             console.log("got img");
             var card = document.getElementById(`card${i}`).style;
             card.background = `url(${url})`;
-            card.backgroundSize = '300px';
+            card.backgroundSize = '19vw'; /*300px */
         }).catch(function(err){
             console.log("there was an issue: ", err);
         });
     }
 
     cardTemplate(i){
-        const {loading, data} = this.state;
+        const {loading, data, width} = this.state;
         return(
             <Link className="link" to={loading? "/tagok" : `/tagok/${data[i].url}`}>
-                <Card className = "card" id={`card${i}`} shadow={5}>
-                    <a className="about">
+                <Card style={{width: '19vw', minHeight: '1vw'}} className = "card" id={`card${i}`} shadow={5}>
+                    <a className="about" style={{height: 'auto'}}>
                     {loading? "Egy pillanat..." : data[i].lastName + " " + data[i].firstName}
                     </a>
                 </Card>
@@ -71,10 +67,35 @@ class Projects extends Component {
     }
 
     toggleCategories(i) {
-        const {data} = this.state;
+        const {data, width} = this.state;
+        var isPhone = width <= 500;
+        var isHandheld = width <= 1000;
         var indices = [];
+        if (isPhone){
+            //only display one card
+            return(
+                <div className="projects-grid">
+                    {this.cardTemplate(i)}
+                </div>
+            )
+        }
+        if (isHandheld){
+            //display two cards
+            for (var j = i; j <= (i + 1); ++j){
+                if (j === data.length) break;
+                indices.push(j);
+            }
+            var toRender = [];
+            indices.forEach((ea) =>{
+                toRender.push(this.cardTemplate(ea));
+            })
+            return(
+                <div className="projects-grid">
+                    {toRender}
+                </div>
+            )
+        }
         for (var j = i; j <= (i + 2); ++j){
-            console.log(j);
             if (j === data.length) break;
             indices.push(j);
         }
@@ -87,44 +108,21 @@ class Projects extends Component {
                 {toRender}
             </div>
         )
-        /*
-        console.log("i: ", i, "data.length: ", data.length);
-            return(    
-                <div className="projects-grid">
-                <Link className="link" to={loading? "/tagok" : `/tagok/${data[i].url}`}>
-                <Card className = "card" id={`card${i}`} shadow={5}>
-                    <a className="about">
-                    {loading? "Egy pillanat..." : data[i].lastName + " " + data[i].firstName}
-                    </a>
-                </Card>
-                </Link>
-
-                <Link className="link" to={loading? "/tagok" : `/tagok/${data[++i].url}`}>
-                <Card className = "card" id={`card${i}`} shadow={5}>
-                    <a className="about">
-                    {loading? "Egy pillanat..." : data[i].lastName + " " + data[i].firstName}
-                    </a>
-                </Card>
-                </Link>
-
-                <Link className="link" to={loading? "/tagok" : `/tagok/${data[++i].url}`}>
-                <Card className = "card" id={`card${i}`} shadow={5}>
-                    <a className="about">
-                    {loading? "Egy pillanat..." : data[i].lastName + " " + data[i].firstName}
-                    </a>
-                </Card>
-                </Link>
-
-                </div> 
-            )*/
     }
 
     render(){
         //this.test();
         var len = this.state.data.length;
         var item = [];
-        for (var i = 0; i < len; i += 3){
-            item.push(<div className="content">{this.toggleCategories(i)};</div>);
+        var j = 3;
+        if (this.state.width <= 1000){
+            if (this.state.width <= 500){
+                j = 1;
+            }
+            j = 2;
+        }
+        for (var i = 0; i < len; i += j){
+            item.push(<div className="content">{this.toggleCategories(i)}</div>);
         }
         return(
             <div className="people">

@@ -15,7 +15,7 @@ class Home extends Component {
                         <div className="banner-text">
                             <h1>Hangyaboly Színjátszó Társulat</h1>
                             <hr/>
-                            <p style={{fontSize:'30px'}}>A Torontói Magyar Ház Amatőr Színtársulata</p>
+                            <p style={{fontSize:'2vw' /*30px*/}}>A Torontói Magyar Ház Amatőr Színtársulata</p>
                             <p style={{marginBottom: '6px'}}>Hangyaboly | Gyertyák Csonking Égnek | Tóték</p>
                             {/*
 

@@ -8,6 +8,7 @@ import People from './people';
 import Plays from './plays';
 import Actors from './actors';
 import Gallery from './gallery';
+import NotFound from './not-found';
 
 
 const Main = () => (
@@ -19,6 +20,7 @@ const Main = () => (
         <Route path="/szerepek" component={Plays}/>
         <Route path="/tagok/:name" component={Actors}/>
         <Route path="/galeria" component={Gallery}/>
+        <Route component={NotFound}/>
     </Switch>
 )
 

@@ -21,6 +21,7 @@
     "react-mdl": "^2.1.0",
     "react-native": "^0.62.2",
     "react-native-check-box": "^2.1.7",
+    "react-responsive": "^8.0.3",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "react-slideshow-image": "^1.4.2",
