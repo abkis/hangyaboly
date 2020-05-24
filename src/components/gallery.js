@@ -55,8 +55,8 @@ class Gallery extends Component{
     render(){
     return(  
         <div className="pic-page">
-        <h1> Képek</h1>
         <div className="pics">
+        <h1 style={{fontSize: '4vw'}}> Képek</h1>
             <ImageGallery items={this.state.loading ? slideImages : this.state.correctFormat}/>
         </div>
         </div>

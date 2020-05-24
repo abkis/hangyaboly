@@ -94,8 +94,8 @@ class Plays extends Component {
             items.push(
                 <ListItem>
                     <ListItemContent>
-                        <a style={{fontFamily: 'Anton', fontSize:"20px"}}>{actor} </a>
-                        <a style={{fontFamily: "Allegrya", fontSize:"20px", textAlign: 'center', paddingInlineStart: '15px'}}>{current[actor]}</a>
+                        <a style={{fontFamily: 'Anton', fontSize:"2vw" /*20px */}}>{actor} </a>
+                        <a style={{fontFamily: "Allegrya", fontSize:"2vw", textAlign: 'center', paddingInlineStart: '15px'}}>{current[actor]}</a>
                     </ListItemContent>
                 </ListItem>
             )

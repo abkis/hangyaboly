@@ -4,7 +4,7 @@
 }
 
 .pics{
-    width: 65%;
+    width: 65vw; /*65%*/
     margin: auto;
-    height: 70%;
+    height: 70vw; /*70%*/
 }
