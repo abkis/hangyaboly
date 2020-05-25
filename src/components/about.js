@@ -18,7 +18,7 @@ class About extends Component {
                             <p className="description">
                             Oyan szinházat szeretnénk létrehozni, ahol nemcsak a nézők, de a szinészek is tanulhatnak valami újat, miközben játszanak, szórakoznak. Elsősorban tanitani szeretnénk, és csak másodsorban szórakoztatani. Éppen ezért olyan szindarabok lesznek / voltak megálmodva szinpadra, amin nemcsak nevetni, sirni es gondokodni lehet, de valami újat is tanulni.
                             </p>
-                            <h5>Boda-Lázár Judith, a Magyarház elnökének üzenete:</h5>
+                            <h5>Boda-Lázár Judith, a Magyar Ház elnökének üzenete:</h5>
                             <p className="description">
                             A Magyar Ház elnökeként nagy öröm volt számomra, mikor értesültem arról, hogy hosszú évek után amatőr színjátszócsoport alakul a Kanadai Magyar Kultúrközpont falai között Kis Csilla szervezésében. A Magyar Ház vezetőségének minden tagja első perctől támogatta az ötlet megvalósulását.
                             <br/>A társulat egy új kulturális színfoltot jelent programjaink palettáján, amin keresztül megélhetjük hagyományainkat és felidézhetjük azokat a pillanatokat, melyek összekötnek bennünket az anyaországgal és a határon túli területekkel. Gyermekkorom jó részét Kolozsváron töltöttem, ahol szüleimmel mi is rendszeres színházlátogatók voltunk.
@@ -38,15 +38,20 @@ class About extends Component {
                             Úgy nézett ki, igazam lett.... éltem, játszottam a szinhazat... aztán közbeszólt a sors és évtizedekig csak nézőként jártam szinházba, 
                             de minden egyes alkalommal amikor felgördült a függöny egy picit belehaltam... ott szeretnék lenni, ott fent a szinpadon... 
                             és akkor jött a Hangyaboly... és én ott lehettem... Köszönöm!!!!”<br/>
-                            <a style={{marginLeft: '60%'}} className="pretty">–Gabriela Schneman</a>
+                            <a className="pretty">–Gabriela Schneman</a>
                             </p>
                             <br/>
                             <p className="testimonials">
                             „A Hangyaboly együttlét, jó társaság, jó hangulat, kihívás, izgalmak, sikerélmény, szórakozás közös játék és szép
                             emlékek! Már nagyon várom, hogy újra együtt játszhassunk! :) ”
-                            <a className="pretty">–Tarnai Tünde</a>
+                            <br/><a className="pretty">–Tarnai Tünde</a>
                             </p>
                             <br/>
+                            <p className="testimonials">
+                            „A Hangyaboly számomra egy színes közösség, ahol álarcok nélkül, de mégis álarcokkal lehetek önmagam, 
+                            az a valaki, aki nagyon szeret játszani, más sorsok mögé tekinteni, más bőrébe bújni egy kicsit, és tehetem mindezt magyarul, az anyanyelvemen.”
+                            <br/><a className="pretty">–Antal Anikó</a>
+                            </p>
                         </Cell>
                     </Grid>
                     <hr style={{ marginTop: '5px'}}/>
