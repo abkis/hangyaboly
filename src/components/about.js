@@ -18,6 +18,13 @@ class About extends Component {
                             <p className="description">
                             Oyan szinházat szeretnénk létrehozni, ahol nemcsak a nézők, de a szinészek is tanulhatnak valami újat, miközben játszanak, szórakoznak. Elsősorban tanitani szeretnénk, és csak másodsorban szórakoztatani. Éppen ezért olyan szindarabok lesznek / voltak megálmodva szinpadra, amin nemcsak nevetni, sirni es gondokodni lehet, de valami újat is tanulni.
                             </p>
+                            <h5>Boda-Lázár Judith, a Magyarház elnökének üzenete:</h5>
+                            <p className="description">
+                            A Magyar Ház elnökeként nagy öröm volt számomra, mikor értesültem arról, hogy hosszú évek után amatőr színjátszócsoport alakul a Kanadai Magyar Kultúrközpont falai között Kis Csilla szervezésében. A Magyar Ház vezetőségének minden tagja első perctől támogatta az ötlet megvalósulását.
+                            <br/>A társulat egy új kulturális színfoltot jelent programjaink palettáján, amin keresztül megélhetjük hagyományainkat és felidézhetjük azokat a pillanatokat, melyek összekötnek bennünket az anyaországgal és a határon túli területekkel. Gyermekkorom jó részét Kolozsváron töltöttem, ahol szüleimmel mi is rendszeres színházlátogatók voltunk.
+                            <br/>A Hangyaboly Torontói Magyar Színjátszócsoportot hiánypótló kezdeményezésnek tartom. Büszkeséggel tölt el, hogy már számos környéki magyar közösségbe kaptak meghívást, valamint, hogy tavaly novemberben a második alkalommal megrendezett, Kanadai Magyar Amatőr Színházi Fesztiválon (KAMASZ) is felléptek. 
+                            <br/>Bízom benne, hogy a tavaly tavasszal bemutatott első színdarabjuk sikere után további felejthetetlen előadásokkal ajándékoznak meg bennünket, és a magyar nyelvű színházi élet ismét virágzásnak indul közösségünkben.
+                            </p>
                         </Cell>
                         <Cell col={6} style={{boxShadow: '0 0 10px rgb(6, 114, 6)', borderRadius: '8px'}}>
                             <h3>A Tagokról</h3>

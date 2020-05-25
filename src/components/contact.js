@@ -12,9 +12,9 @@ class Contact extends Component {
                         <img 
                             src="https://scontent.fybz2-1.fna.fbcdn.net/v/t1.0-9/88350754_2893350730711673_1437086638378319872_o.jpg?_nc_cat=108&_nc_sid=730e14&_nc_ohc=05tT-vA2aYwAX-MykZJ&_nc_ht=scontent.fybz2-1.fna&oh=4ad9e8fcebadbcb1b4e874de2cd70eda&oe=5EE365A0"
                             alt="group-pic-contact"
-                            style={{height: '17vw'}} /*250px*/
+                            style={{height: '19vw'}} /*250px*/
                         />
-                        <p style={{width: '75%', margin:'auto', fontSize: '1vw' /*15px*/, paddingTop: '1em'}}>Ha van bármi kérdése, írjon nekünk! Szívesen fogadjuk az érdeklödőket.</p>
+                        <p style={{width: '75%', margin:'auto', fontSize: '1.5vw' /*15px*/, paddingTop: '1em'}}>Ha van bármi kérdése, írjon nekünk! Szívesen fogadjuk az érdeklödőket.</p>
                     </Cell>
 
                     <Cell col={6}>

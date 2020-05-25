@@ -71,7 +71,7 @@ class Projects extends Component {
         var isPhone = width <= 500;
         var isHandheld = width <= 1000;
         var indices = [];
-        if (isPhone){
+       /* if (isPhone){
             //only display one card
             return(
                 <div className="projects-grid">
@@ -94,7 +94,7 @@ class Projects extends Component {
                     {toRender}
                 </div>
             )
-        }
+        }*/
         for (var j = i; j <= (i + 2); ++j){
             if (j === data.length) break;
             indices.push(j);
@@ -115,12 +115,12 @@ class Projects extends Component {
         var len = this.state.data.length;
         var item = [];
         var j = 3;
-        if (this.state.width <= 1000){
+        /*if (this.state.width <= 1000){
             if (this.state.width <= 500){
                 j = 1;
             }
             j = 2;
-        }
+        }*/
         for (var i = 0; i < len; i += j){
             item.push(<div className="content">{this.toggleCategories(i)}</div>);
         }
