@@ -16,7 +16,7 @@ class About extends Component {
                         <Cell col={6} style={{boxShadow: '0 0 10px rgb(6, 114, 6)', borderRadius: '8px'}}>
                             <h3>A Színházról</h3>
                             <p className="description">
-                            Oyan szinházat szeretnénk létrehozni, ahol nemcsak a nézők, de a szinészek is tanulhatnak valami újat, miközben játszanak, szórakoznak. Elsősorban tanitani szeretnénk, és csak másodsorban szórakoztatani. Éppen ezért olyan szindarabok lesznek / voltak megálmodva szinpadra, amin nemcsak nevetni, sirni es gondokodni lehet, de valami újat is tanulni.
+                            Oyan színházat szeretnénk létrehozni, ahol nemcsak a nézők, de a színészek is tanulhatnak valami újat, miközben játszanak, szórakoznak. Elsősorban tanítani szeretnénk, és csak másodsorban szórakoztatani. Éppen ezért olyan színdarabok lesznek / voltak megálmodva színpadra, amin nemcsak nevetni, sírni és gondokodni lehet, de valami újat is tanulni.
                             </p>
                             <h5>Boda-Lázár Judith, a Magyar Ház elnökének üzenete:</h5>
                             <p className="description">
