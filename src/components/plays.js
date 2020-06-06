@@ -103,6 +103,18 @@ class Plays extends Component {
         return items;
     }
 
+    formatAbout(){
+        const {data, docName, activeTab} = this.state;
+        var item = [];
+        data[docName[activeTab]].about.forEach((ea, i) =>{
+            if (i != 0){
+                item.push(<br/>)
+            }
+            item.push(<div>{ea}</div>);
+        })
+        return item;
+    }
+
     pageLayout(){
         const {activeTab, plays, data, loading, docName} = this.state;
         return(
@@ -115,7 +127,7 @@ class Plays extends Component {
                             <img id="poster" src={loading? "" : this.changeImg()}/>
                         </Cell>
                         <Cell col={6} className="rhs">
-                            <div>{loading? "Egy pillanat..." : data[docName[activeTab]].about}</div>
+                            <div>{loading? "Egy pillanat..." : this.formatAbout()/*data[docName[activeTab]].about*/}</div>
                         </Cell>
                     </Grid>
                     <hr/>
