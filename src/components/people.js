@@ -30,7 +30,6 @@ class Projects extends Component {
         var actorRef = db.collection("actors");
         const actors = await actorRef.get().then(snapshot => snapshot.docs.map(doc => doc.data()));
         this.setState({data: actors});
-        console.log("this.state.data: ", this.state.data, 'loading: ', this.state.loading);
         this.state.data.forEach((ea, i) => {
             this.getURL(ea['img'], i);
         })
@@ -44,7 +43,6 @@ class Projects extends Component {
     getURL(name, i){
         var imgRef = storage.ref(`actor-pics/${name}`);
         imgRef.getDownloadURL().then(function(url){
-            console.log("got img");
             var card = document.getElementById(`card${i}`).style;
             card.background = `url(${url})`;
             card.backgroundSize = '19vw'; /*300px */

@@ -27,7 +27,6 @@ class Actors extends Component{
     changeImg(){
         var imgRef = storage.ref(`actor-pics/${this.state.actor.img}`);
         imgRef.getDownloadURL().then(function(url){
-            console.log("got img");
             var img = document.getElementById("profile");
             img.src = `${url}`;
         }).catch(function(err){
@@ -88,7 +87,6 @@ class Actors extends Component{
                 str += ea + ', ';
             }
         })
-        console.log(str);
         return str;
     }
 

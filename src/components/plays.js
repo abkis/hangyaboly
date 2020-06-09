@@ -16,7 +16,6 @@ class Plays extends Component {
     async getInfo(){
         var doc = await (await db.collection("about").doc("plays").get()).data();
         this.setState({data: doc});
-        console.log(doc);
         for (var play in doc){
             this.state.plays.push(doc[play].title + ' – ' + doc[play].author);
             this.state.docName.push(play);
@@ -44,7 +43,6 @@ class Plays extends Component {
         const {data, docName, activeTab} = this.state;
         var imgRef = storage.ref(`plays/${data[docName[activeTab]].img}`);
         imgRef.getDownloadURL().then(function(url){
-            console.log("got img");
             //return(url)
             var img = document.getElementById("poster");
             img.src = `${url}`;

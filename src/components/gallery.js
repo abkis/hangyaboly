@@ -25,7 +25,6 @@ class Gallery extends Component{
         var picRef = db.collection("pics");
         const arr = await picRef.get().then(snapshot => snapshot.docs.map(doc => doc.data()));
         this.setState({paths: arr[0].imgNames});
-        console.log("this.state.paths: ", this.state.paths, 'loading: ', this.state.loading);
         this.getPics();
     };
 
