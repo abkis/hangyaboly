@@ -45,23 +45,23 @@ class App extends Component {
       //handheld device
       return(
         <>
-        <span class="mdl-layout-title" style={{width:'35vw',  marginLeft:'0',  marginTop: '0', paddingTop: '0'}}>
+        <span className="mdl-layout-title" style={{width:'35vw',  marginLeft:'0',  marginTop: '0', paddingTop: '0'}}>
               <a href="/" style={{paddingLeft: '0', paddingRight: '0', fontFamily: 'Allan', fontSize: '2.8vw' /*'40px'*/, textDecoration: 'none', color: 'white'}}>
               Hangyaboly Színjátszó Társulat
               </a>
         </span>
-        <div class="mdl-layout-spacer" style={{width: '3vw', flexGrow: "0"}}></div>
+        <div className="mdl-layout-spacer" style={{width: '3vw', flexGrow: "0"}}></div>
         </>
       )
     }
     return(
       <>
-      <span  class="mdl-layout-title" style={{width:'30vw'}}>
+      <span  className="mdl-layout-title" style={{width:'30vw'}}>
               <a href="/" style={{paddingLeft: '0', paddingRight: '0', fontFamily: 'Allan', fontSize: '2.8vw' /*'40px'*/, textDecoration: 'none', color: 'white'}}>
               Hangyaboly Színjátszó Társulat
               </a>
       </span>
-      <div class="mdl-layout-spacer" style={{width: '15vw', flexGrow: "0"}}></div>
+      <div className="mdl-layout-spacer" style={{width: '15vw', flexGrow: "0"}}></div>
       </>
     )
   }
@@ -71,8 +71,8 @@ class App extends Component {
     return (
       <div>
       <Layout fixedHeader>
-        <header class="mdl-layout__header header-color is-casting-shadow">
-          <div class="mdl-layout__header-row" style={{paddingLeft: '4vw', paddingRight: '4vw'}}>
+        <header className="mdl-layout__header header-color is-casting-shadow">
+          <div className="mdl-layout__header-row" style={{paddingLeft: '4vw', paddingRight: '4vw'}}>
             {this.header()}
             <Navigation style={{marginRight:'4vw'}}>
                 <Link to="/" style={{fontFamily: 'Allan', fontSize: '2vw' /*30px*/, marginLeft: '0'}}>Főoldal</Link>

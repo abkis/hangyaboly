@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Grid, Cell, List, ListItem, ListItemContent} from 'react-mdl';
 import './css/contact.css';
+import Pic from "../img/group-pic-contact.jpg"
 
 class Contact extends Component {
     render(){
@@ -10,11 +11,11 @@ class Contact extends Component {
                     <Cell col={6}>
                         <h2>Csatlakozzon Hozzánk!</h2>
                         <img 
-                            src="https://scontent.fybz2-1.fna.fbcdn.net/v/t1.0-9/88350754_2893350730711673_1437086638378319872_o.jpg?_nc_cat=108&_nc_sid=730e14&_nc_ohc=05tT-vA2aYwAX-MykZJ&_nc_ht=scontent.fybz2-1.fna&oh=4ad9e8fcebadbcb1b4e874de2cd70eda&oe=5EE365A0"
+                            src={Pic}
                             alt="group-pic-contact"
                             style={{height: '19vw'}} /*250px*/
                         />
-                        <p style={{width: '75%', margin:'auto', fontSize: '1.5vw' /*15px*/, paddingTop: '1em'}}>Ha van bármi kérdése, írjon nekünk! Szívesen fogadjuk az érdeklödőket.</p>
+                        <p style={{width: '75%', margin:'auto', fontSize: '1.5vw' /*15px*/, paddingTop: '1em'}}>Ha van bármi kérdése, írjon nekünk! Szívesen fogadjuk az érdeklődőket.</p>
                     </Cell>
 
                     <Cell col={6}>

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Grid, Cell} from 'react-mdl';
 import './css/home.css';
+import Pic from "../img/group-pic.jpg";
 
 class Home extends Component {
     render(){
@@ -8,7 +9,7 @@ class Home extends Component {
             <div className="body">
                 <Grid className="home-grid">
                     <Cell col={12}>
-                        <img src="https://scontent.fybz2-1.fna.fbcdn.net/v/t1.0-9/62082786_300307117329766_1862532947530219520_n.jpg?_nc_cat=101&_nc_sid=e3f864&_nc_ohc=rHGxUmksEyEAX-ZhSdh&_nc_ht=scontent.fybz2-1.fna&oh=b1ac76dae04678e33bcad1f8f6f4eb12&oe=5EE0B349"
+                        <img src={Pic}
                         alt="group-pic"
                         className="group-img"
                         />
@@ -16,7 +17,7 @@ class Home extends Component {
                             <h1>Hangyaboly Színjátszó Társulat</h1>
                             <hr/>
                             <p style={{fontSize:'2vw' /*30px*/}}>A Torontói Magyar Ház Amatőr Színtársulata</p>
-                            <p style={{marginBottom: '6px'}}>Hangyaboly | Gyertyák Csonking Égnek | Tóték</p>
+                            <p style={{marginBottom: '6px'}}>Hangyaboly | A Gyertyák Csonking Égnek | Tóték</p>
                             {/*
 
                             <div className="social-links">

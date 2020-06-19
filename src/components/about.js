@@ -28,14 +28,14 @@ class About extends Component {
                         </Cell>
                         <Cell col={6} style={{boxShadow: '0 0 10px rgb(6, 114, 6)', borderRadius: '8px'}}>
                             <h3>A Tagokról</h3>
-                            <p className="description"> Amatőr szinház lévén minden tagunk amatőr, de mindenképp szivvel-lélekkel játszani vágyó, nagyon is tehetséges nők, férfiak, gyerekek. 
-                                Szívesen várjuk olyan egyének jelentkezését, akik úgy érzik hozzájárulnának az előadásokhoz, akár színpadon, akár a színpad mögött valósitanák meg magukat szivesen.</p>
+                            <p className="description"> Amatőr színház lévén minden tagunk amatőr, de mindenképp szívvel-lélekkel játszani vágyó, nagyon is tehetséges nők, férfiak, gyerekek. 
+                                Szívesen várjuk olyan egyének jelentkezését, akik úgy érzik hozzájárulnának az előadásokhoz, akár színpadon, akár a színpad mögött valósitanák meg magukat szívesen.</p>
                             <h4>„Mit jelent nekem a Hangyaboly?”</h4>
                             <p className="testimonials">
-                            „Sokat, nagyon sokat... az újrakezdést, a folytatást. Amióta ráeszméltem a világra imádom a szinházat, és nemcsak nézni, csinálni is... <br/>
+                            „Sokat, nagyon sokat... az újrakezdést, a folytatást. Amióta ráeszméltem a világra imádom a színházat, és nemcsak nézni, csinálni is... <br/>
                             Egészen kicsi koromban nekem is sokszor feltették a kérdést: Mi leszel ha nagy leszel?... Gondolkodás nélkül a válasz mindig ugyanaz volt... 
-                            Szinésznő. Persze sokan megmosolyogták a választ, de én mindig tudtam, hogy ott bent, valahol legbelül én ezt komolyan gondolom. <br/>
-                            Úgy nézett ki, igazam lett.... éltem, játszottam a szinhazat... aztán közbeszólt a sors és évtizedekig csak nézőként jártam szinházba, 
+                            Színésznő. Persze sokan megmosolyogták a választ, de én mindig tudtam, hogy ott bent, valahol legbelül én ezt komolyan gondolom. <br/>
+                            Úgy nézett ki, igazam lett.... éltem, játszottam a színhazat... aztán közbeszólt a sors és évtizedekig csak nézőként jártam színházba, 
                             de minden egyes alkalommal amikor felgördült a függöny egy picit belehaltam... ott szeretnék lenni, ott fent a szinpadon... 
                             és akkor jött a Hangyaboly... és én ott lehettem... Köszönöm!!!!”<br/>
                             <a className="pretty">–Gabriela Schneman</a>
